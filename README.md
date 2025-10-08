@@ -1,141 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Multi-Section Network Design</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    color: #e5e5e5;
+    background-color: #0e0e10;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 20px;
+  }
+  h1, h2, h3 {
+    color: #00bcd4;
+  }
+  code, pre {
+    background: #1a1a1a;
+    color: #90ee90;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+  }
+  th, td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background: #222;
+    color: #00bcd4;
+  }
+  td {
+    background: #141414;
+  }
+  hr {
+    border: 1px solid #333;
+    margin: 30px 0;
+  }
+  blockquote {
+    background: #1b1b1b;
+    border-left: 5px solid #00bcd4;
+    padding: 10px 20px;
+    font-style: italic;
+  }
+  .emoji {
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
 
-<div style="max-width:900px; margin:12px auto; font-family: 'Courier New', monospace; line-height:1.25;">
+<h1>🛡️ Secure Multi-Section Network Design</h1>
 
-  <!-- Header (fixed layout) -->
-  <div style="border-top:2px solid #444; border-bottom:2px solid #444; padding:10px 8px; margin-bottom:12px;">
-    <table style="width:100%; border-collapse:collapse; font-size:14px;">
-      <tr>
-        <td style="width:25%;"><strong>Author</strong><br>Tom Maosa Mokua</td>
-        <td style="width:25%;"><strong>Instructor</strong><br>Mr. Albert Kiprop</td>
-        <td style="width:30%;"><strong>Institution</strong><br>Eldohub Institute Academy</td>
-        <td style="width:20%; text-align:right;"><strong>Date</strong><br>October 8, 2025</td>
-      </tr>
-    </table>
-  </div>
+<h3>Final Project Report</h3>
+<p><b>Submitted by:</b> Tom Maosa Mokua<br>
+<b>Course:</b> Networking and Cyber Security<br>
+<b>Instructor:</b> Mr. Albert Kiprop<br>
+<b>Institution:</b> Eldohub Institute Academy<br>
+<b>Date:</b> October 8, 2025</p>
 
-  <!-- Project Summary (preserved spacing) -->
-  <div style="margin-bottom:12px;">
-    <h3 style="margin:6px 0;">📜 Project Summary</h3>
-    <pre style="background:#0f172a10; padding:10px; border-radius:6px; white-space:pre; font-size:13px; margin:6px 0;">
-A secure enterprise network segmented into three functional sections:
+<hr>
 
-  → VLAN 10: Management    (192.168.10.0/24)
-  → VLAN 20: Internal      (192.168.110.0/24)
-  → VLAN 30: Guests        (192.168.210.0/24)
-  → VLAN 99: Native VLAN   (Trunking)
+<h2>📘 Overview</h2>
+<p>
+The <b>Secure Multi-Section Network Design</b> project implements a three-section enterprise network featuring
+<b>VLAN segmentation</b>, <b>OSPF dynamic routing</b>, and <b>multi-layer security controls</b>.
+It demonstrates a complete, secure enterprise topology suitable for small to medium-sized businesses.
+</p>
 
-Implements:
-  • OSPF Dynamic Routing
-  • Port Security (Sticky MAC)
-  • ACL Traffic Filtering
-  • DHCP Snooping & BPDU Guard
-  • Inter-VLAN Security Policies
-    </pre>
-  </div>
+<hr>
 
-  <!-- Verification Tests (stable table) -->
-  <div style="margin-bottom:12px;">
-    <h3 style="margin:6px 0;">🧩 Network Verification Tests</h3>
-    <table style="width:100%; border-collapse:collapse; font-size:13px;">
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">VLAN Segmentation</td><td style="padding:6px 8px; text-align:right;">✅ PASSED</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">Port Security</td><td style="padding:6px 8px; text-align:right;">✅ PASSED</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">ACL Enforcement</td><td style="padding:6px 8px; text-align:right;">✅ PASSED</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">OSPF Routing</td><td style="padding:6px 8px; text-align:right;">✅ PASSED</td></tr>
-      <tr><td style="padding:6px 8px;">End-to-End Connectivity</td><td style="padding:6px 8px; text-align:right;">✅ PASSED</td></tr>
-    </table>
-  </div>
+<h2>🧠 Key Features</h2>
 
-  <!-- Network overview (stable ASCII-like layout using table) -->
-  <div style="margin-bottom:18px;">
-    <h3 style="margin:6px 0;">⚙️ Network Overview</h3>
-    <table style="width:100%; border-collapse:collapse; font-size:13px; text-align:center;">
-      <tr>
-        <td style="width:34%; padding:10px; background:#f6f8fa; border-radius:6px;">
-          <strong>VLAN 10</strong><br>Management<br><small>192.168.10.0/24</small>
-        </td>
-        <td style="width:32%; padding:8px; font-size:20px;">➡️ &#8203;OSPF&#8203; ➡️</td>
-        <td style="width:34%; padding:10px; background:#f6f8fa; border-radius:6px;">
-          <strong>VLAN 20</strong><br>Internal<br><small>192.168.110.0/24</small>
-        </td>
-      </tr>
-      <tr style="height:8px;"><td colspan="3"></td></tr>
-      <tr>
-        <td style="border-top:1px dashed #eee; padding:8px;">(Mgmt switches)</td>
-        <td style="border-top:1px dashed #eee; padding:8px;">(OSPF backbone)</td>
-        <td style="border-top:1px dashed #eee; padding:8px;">(Internal switches)</td>
-      </tr>
-      <tr style="height:12px;"><td colspan="3"></td></tr>
-      <tr>
-        <td colspan="3" style="padding:10px; background:#fffbe6; border-radius:6px;">
-          <strong>Guest VLAN</strong> - VLAN 30 : 192.168.210.0/24 (isolated; controlled by ACLs)
-        </td>
-      </tr>
-    </table>
-  </div>
+<p>✅ <b>Multi-VLAN Architecture</b></p>
+<table>
+  <tr><th>VLAN</th><th>Purpose</th><th>Network</th></tr>
+  <tr><td>10</td><td>Management</td><td>192.168.10.0/24</td></tr>
+  <tr><td>20</td><td>Internal</td><td>192.168.110.0/24</td></tr>
+  <tr><td>30</td><td>Guests</td><td>192.168.210.0/24</td></tr>
+  <tr><td>99</td><td>Native VLAN</td><td>Trunk</td></tr>
+</table>
 
-</div>
+<p>✅ <b>OSPF Dynamic Routing</b> between routers<br>
+✅ <b>Access Control Lists (ACLs)</b> for inter-VLAN security<br>
+✅ <b>Port Security</b> & Switch Hardening<br>
+✅ <b>DHCP Snooping</b> + <b>BPDU Guard</b><br>
+✅ <b>End-to-End Secure Connectivity</b></p>
 
-<!-- SECURITY + CERTIFICATE + ACKNOWLEDGEMENTS + CONCLUSION -->
-<div style="max-width:900px; margin:12px auto; font-family:'Courier New', monospace; line-height:1.3;">
+<hr>
 
-  <!-- Security Highlights -->
-  <div style="margin-bottom:16px;">
-    <h3 style="margin:6px 0;">🔐 Security Highlights</h3>
-    <table style="width:100%; border-collapse:collapse; font-size:13px;">
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">Port Security</td><td style="padding:6px 8px; text-align:right;">Sticky MAC, single host per port</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">DHCP Snooping</td><td style="padding:6px 8px; text-align:right;">Enabled on all access ports</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">BPDU Guard</td><td style="padding:6px 8px; text-align:right;">Active</td></tr>
-      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">ACLs</td><td style="padding:6px 8px; text-align:right;">Filtering inter-VLAN traffic</td></tr>
-      <tr><td style="padding:6px 8px;">Switch Hardening</td><td style="padding:6px 8px; text-align:right;">Default VLANs removed, unused ports disabled</td></tr>
-    </table>
-  </div>
+<h2>🧩 Network Topology</h2>
+<pre>
++---------------------+         +---------------------+         +---------------------+
+|   Router R1         |---------|   Router R2         |---------|   Router R3         |
+| VLAN 10, 99         |         | VLAN 20, 99         |         | VLAN 30, 99         |
++---------------------+         +---------------------+         +---------------------+
+       |                            |                             |
+    [Switch 1]                 [Switch 2]                   [Switch 3]
+   (Mgmt VLAN)                (Internal VLAN)              (Guest VLAN)
+</pre>
+<p><i>(Replace this diagram with your actual network image if available)</i></p>
+<p><b>Example:</b><br>
+<img src="./topology-diagram.png" alt="Network Topology" width="700">
+</p>
 
-  <!-- Certificate -->
-  <div style="margin-bottom:16px;">
-    <h3 style="margin:6px 0;">🧾 Certificate of Originality</h3>
-    <pre style="background:#0f172a10; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
-"I hereby declare that this project report is my original work and has not been submitted
-previously for any other course or qualification. All sources of information have been
-properly acknowledged and referenced."
+<hr>
 
-Signed,
-    Tom Maosa Mokua
-    </pre>
-  </div>
+<h2>⚙️ Cisco Configuration Samples</h2>
 
-  <!-- Acknowledgements -->
-  <div style="margin-bottom:16px;">
-    <h3 style="margin:6px 0;">🙏 Acknowledgements</h3>
-    <pre style="background:#f6f8fa; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
-• Ms. Magdaline Chepkemoi — CEO, Eldohub Institute Academy
-  → For her vision and leadership in providing quality tech education.
+<h3>1️⃣ VLAN Configuration (Switch)</h3>
+<pre>
+Switch(config)# vlan 10
+Switch(config-vlan)# name Management
+Switch(config)# vlan 20
+Switch(config-vlan)# name Internal
+Switch(config)# vlan 30
+Switch(config-vlan)# name Guests
+Switch(config)# vlan 99
+Switch(config-vlan)# name Native
+Switch(config)# interface range fa0/1 - 24
+Switch(config-if-range)# switchport mode access
+Switch(config-if-range)# switchport access vlan 20
+</pre>
 
-• Mr. Albert Kiprop — Instructor
-  → For his guidance and expertise in networking and security.
+<h3>2️⃣ Trunk Configuration</h3>
+<pre>
+Switch(config)# interface gig0/1
+Switch(config-if)# switchport trunk encapsulation dot1q
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk native vlan 99
+Switch(config-if)# switchport trunk allowed vlan 10,20,30,99
+</pre>
 
-• My Family
-  → For their continuous support and encouragement.
-    </pre>
-  </div>
+<h3>3️⃣ OSPF Configuration (Router)</h3>
+<pre>
+Router(config)# router ospf 1
+Router(config-router)# network 192.168.10.0 0.0.0.255 area 0
+Router(config-router)# network 192.168.110.0 0.0.0.255 area 0
+Router(config-router)# network 192.168.210.0 0.0.0.255 area 0
+Router(config-router)# passive-interface default
+Router(config-router)# no passive-interface g0/0
+Router(config-router)# no passive-interface g0/1
+</pre>
 
-  <!-- Conclusion -->
-  <div style="margin-bottom:12px;">
-    <h3 style="margin:6px 0;">🧠 Conclusion</h3>
-    <pre style="background:#0f172a10; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
-The Secure Multi-Section Network Design successfully meets enterprise requirements,
-providing robust segmentation, routing efficiency, and layered security policies.
+<h3>4️⃣ ACL Example (Restrict Guest Access)</h3>
+<pre>
+Router(config)# access-list 110 deny ip 192.168.210.0 0.0.0.255 192.168.10.0 0.0.0.255
+Router(config)# access-list 110 permit ip any any
+Router(config)# interface g0/1
+Router(config-if)# ip access-group 110 in
+</pre>
 
-This project demonstrates practical application of advanced networking principles
-for real-world secure enterprise environments.
-    </pre>
-  </div>
+<h3>5️⃣ Security Features</h3>
+<pre>
+Switch(config)# interface range fa0/1 - 12
+Switch(config-if-range)# switchport port-security
+Switch(config-if-range)# switchport port-security maximum 2
+Switch(config-if-range)# switchport port-security mac-address sticky
+Switch(config-if-range)# switchport port-security violation restrict
+Switch(config)# spanning-tree portfast default
+Switch(config)# spanning-tree bpduguard enable
+Switch(config)# ip dhcp snooping
+Switch(config)# ip dhcp snooping vlan 10,20,30
+</pre>
 
-  <!-- Footer / Author Info -->
-  <div style="border-top:2px solid #444; padding-top:8px; margin-top:8px; font-size:13px;">
-    👨🏽‍💻 <strong>Author:</strong> Tom Maosa Mokua<br>
-    🏫 <strong>Institution:</strong> Eldohub Institute Academy<br>
-    📅 <strong>Date:</strong> October 8, 2025<br>
-    🔒 <strong>Course:</strong> Networking and Cyber Security
-  </div>
+<hr>
 
-</div>
+<h2>🧾 Verification & Testing</h2>
+
+<table>
+  <tr><th>Test</th><th>Result</th></tr>
+  <tr><td>VLAN Segmentation</td><td>✅ Working</td></tr>
+  <tr><td>Port Security</td><td>✅ Working</td></tr>
+  <tr><td>ACL Enforcement</td><td>✅ Working</td></tr>
+  <tr><td>OSPF Routing</td><td>✅ Working</td></tr>
+  <tr><td>End-to-End Connectivity</td><td>✅ Working</td></tr>
+</table>
+
+<hr>
+
+<h2>🏁 Conclusion</h2>
+<p>
+The <b>Secure Multi-Section Network Design</b> achieves robust enterprise-level security with segmented VLANs,
+secure routing, and traffic control mechanisms.
+This project demonstrates deep understanding of <b>network security principles</b> and practical <b>Cisco IOS configuration</b>
+for real-world deployments.
+</p>
+
+<hr>
+
+<h2>🙏 Acknowledgements</h2>
+<ul>
+  <li><b>Ms. Magdaline Chepkemoi</b>, CEO → For visionary leadership</li>
+  <li><b>Mr. Albert Kiprop</b>, Instructor → For expert mentorship</li>
+  <li><b>My Family</b> → For endless support and encouragement</li>
+</ul>
+
+<hr>
+
+<h2>🧾 Certificate of Originality</h2>
+<blockquote>
+I, <b>Tom Maosa Mokua</b>, declare that this project is my original work and has not been submitted previously
+for any other qualification. All sources have been properly cited.
+</blockquote>
+
+<hr>
+
+<h2>🏫 Institution</h2>
+<p><b>Eldohub Institute Academy</b><br>
+<i>Preparing African youth to benefit from the opportunities the digital economy offers.</i></p>
+
+</body>
+</html>
