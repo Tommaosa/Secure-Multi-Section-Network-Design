@@ -1,4 +1,4 @@
-<!-- Paste this into your README.md -->
+
 <div style="max-width:900px; margin:12px auto; font-family: 'Courier New', monospace; line-height:1.25;">
 
   <!-- Header (fixed layout) -->
@@ -75,47 +75,67 @@ Implements:
 
 </div>
 
-## 🔐 Security Highlights
-Port Security ........... Sticky MAC, single host per port
+<!-- SECURITY + CERTIFICATE + ACKNOWLEDGEMENTS + CONCLUSION -->
+<div style="max-width:900px; margin:12px auto; font-family:'Courier New', monospace; line-height:1.3;">
 
-DHCP Snooping ........... Enabled on all access ports
+  <!-- Security Highlights -->
+  <div style="margin-bottom:16px;">
+    <h3 style="margin:6px 0;">🔐 Security Highlights</h3>
+    <table style="width:100%; border-collapse:collapse; font-size:13px;">
+      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">Port Security</td><td style="padding:6px 8px; text-align:right;">Sticky MAC, single host per port</td></tr>
+      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">DHCP Snooping</td><td style="padding:6px 8px; text-align:right;">Enabled on all access ports</td></tr>
+      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">BPDU Guard</td><td style="padding:6px 8px; text-align:right;">Active</td></tr>
+      <tr><td style="padding:6px 8px; border-bottom:1px dashed #ddd;">ACLs</td><td style="padding:6px 8px; text-align:right;">Filtering inter-VLAN traffic</td></tr>
+      <tr><td style="padding:6px 8px;">Switch Hardening</td><td style="padding:6px 8px; text-align:right;">Default VLANs removed, unused ports disabled</td></tr>
+    </table>
+  </div>
 
-BPDU Guard .............. Active
-
-ACLs .................... Filtering inter-VLAN traffic
-
-Switch Hardening ........ Default VLANs removed, unused ports disabled
-
-
-## 🧾 Certificate of Originality
+  <!-- Certificate -->
+  <div style="margin-bottom:16px;">
+    <h3 style="margin:6px 0;">🧾 Certificate of Originality</h3>
+    <pre style="background:#0f172a10; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
 "I hereby declare that this project report is my original work and has not been submitted
 previously for any other course or qualification. All sources of information have been
 properly acknowledged and referenced."
 
 Signed,
-Tom Maosa Mokua
+    Tom Maosa Mokua
+    </pre>
+  </div>
 
-
-## 🙏 Acknowledgements
+  <!-- Acknowledgements -->
+  <div style="margin-bottom:16px;">
+    <h3 style="margin:6px 0;">🙏 Acknowledgements</h3>
+    <pre style="background:#f6f8fa; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
 • Ms. Magdaline Chepkemoi — CEO, Eldohub Institute Academy
-→ For her vision and leadership in providing quality tech education.
+  → For her vision and leadership in providing quality tech education.
 
 • Mr. Albert Kiprop — Instructor
-→ For his guidance and expertise in networking and security.
+  → For his guidance and expertise in networking and security.
 
 • My Family
-→ For their continuous support and encouragement.
+  → For their continuous support and encouragement.
+    </pre>
+  </div>
 
-## 🧠 Conclusion
+  <!-- Conclusion -->
+  <div style="margin-bottom:12px;">
+    <h3 style="margin:6px 0;">🧠 Conclusion</h3>
+    <pre style="background:#0f172a10; padding:10px; border-radius:6px; white-space:pre-wrap; font-size:13px;">
 The Secure Multi-Section Network Design successfully meets enterprise requirements,
 providing robust segmentation, routing efficiency, and layered security policies.
 
 This project demonstrates practical application of advanced networking principles
 for real-world secure enterprise environments.
----
+    </pre>
+  </div>
 
-**👨🏽‍💻 Author:** *Tom Maosa Mokua*  
-**🏫 Institution:** *Eldohub Institute Academy*  
-**📅 Date:** *October 8, 2025*  
-**🔒 Course:** *Networking and Cyber Security*
+  <!-- Footer / Author Info -->
+  <div style="border-top:2px solid #444; padding-top:8px; margin-top:8px; font-size:13px;">
+    👨🏽‍💻 <strong>Author:</strong> Tom Maosa Mokua<br>
+    🏫 <strong>Institution:</strong> Eldohub Institute Academy<br>
+    📅 <strong>Date:</strong> October 8, 2025<br>
+    🔒 <strong>Course:</strong> Networking and Cyber Security
+  </div>
 
+</div>
