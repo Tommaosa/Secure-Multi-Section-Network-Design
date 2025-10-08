@@ -51,7 +51,7 @@ It demonstrates a complete, secure enterprise topology suitable for small to med
 </pre>
 <p><i>(Replace this diagram with your actual network image if available)</i></p>
 <p><b>Example:</b><br>
-<img src="https://raw.githubusercontent.com/Tommaosa/Secure-…d454b8746fffde24c1fbff9402f4/secure%20network.png" width="700">
+<img src="https://raw.githubusercontent.com/Tommaosa/Secure-Multi-Section-Network-Design/894254aaea1fd454b8746fffde24c1fbff9402f4/secure%20network.png" width="700">
 </p>
 
 <hr>
